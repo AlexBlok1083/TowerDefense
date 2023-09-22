@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private int enemyCount;
+    [SerializeField] private int enemyCount = 10;
     [SerializeField] private GameObject Enemy;
 
     [Header("Delay")]
@@ -15,16 +15,28 @@ public class EnemySpawner : MonoBehaviour
     private float _spawnTimer;
     private int _enemiesSpawned;
 
-    private 
-
+    private ObjectPooler _pooler;
     void Start()
     {
-        
+        _pooler = GetComponent<ObjectPooler>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        _spawnTimer -= Time.deltaTime;
+        if (_spawnTimer < 0)
+        {
+            _spawnTimer = delayBtwSpawns;
+            if (_enemiesSpawned < enemyCount)
+            {
+                _enemiesSpawned++;
+                SpawnEnemy();
+            }
+        }
+    }
+    private void SpawnEnemy()
+    {
+        GameObject newInstance = _pooler.GetInstanceFromPool();
+        newInstance.SetActive(true);
     }
 }
