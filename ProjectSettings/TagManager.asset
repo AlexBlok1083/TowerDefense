@@ -3,12 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - TowerPlatform01
+  - TowerPlatform02
+  - TowerPlatform03
+  - TowerPlatform04
+  - TowerPlatform05
+  - TowerPlatform06
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - platform
   - Water
   - UI
   - 
