@@ -10,6 +10,22 @@ TagManager:
   - TowerPlatform04
   - TowerPlatform05
   - TowerPlatform06
+  - TowerPlatform07
+  - TowerPlatform08
+  - TowerPlatform09
+  - TowerPlatform10
+  - TowerPlatform11
+  - TowerPlatform12
+  - TowerPlatform13
+  - TowerPlatform14
+  - TowerPlatform15
+  - TowerPlatform16
+  - TowerPlatform17
+  - TowerPlatform18
+  - TowerPlatform19
+  - TowerPlatform20
+  - TowerPlatform21
+  - TowerPlatform22
   layers:
   - Default
   - TransparentFX
