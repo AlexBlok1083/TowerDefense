@@ -4136,12 +4136,33 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!50 &828962498
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828962493}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &856318392
 GameObject:
   m_ObjectHideFlags: 0
@@ -4526,6 +4547,7 @@ GameObject:
   m_Component:
   - component: {fileID: 970235958}
   - component: {fileID: 970235959}
+  - component: {fileID: 970235961}
   - component: {fileID: 970235960}
   m_Layer: 5
   m_Name: ArcherTowerLvl1
@@ -4542,7 +4564,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970235957}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 64, z: -9720}
+  m_LocalPosition: {x: -5, y: 64, z: -0.25}
   m_LocalScale: {x: 53, y: 53, z: 53}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4617,6 +4639,19 @@ CircleCollider2D:
   m_Offset: {x: -0.0000009536743, y: -1}
   serializedVersion: 2
   m_Radius: 3
+--- !u!114 &970235961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970235957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f6d6809e9117449a240455c6f82f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemies: []
 --- !u!1 &978054697
 GameObject:
   m_ObjectHideFlags: 0
@@ -6919,6 +6954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1540952966}
   - component: {fileID: 1540952967}
+  - component: {fileID: 1540952969}
   - component: {fileID: 1540952968}
   m_Layer: 5
   m_Name: ArcherTowerLvl2
@@ -6935,7 +6971,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1540952965}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 64, z: -9720}
+  m_LocalPosition: {x: -5, y: 64, z: -0.16}
   m_LocalScale: {x: 53, y: 53, z: 53}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7010,6 +7046,19 @@ CircleCollider2D:
   m_Offset: {x: -0.0000009536743, y: -1}
   serializedVersion: 2
   m_Radius: 4
+--- !u!114 &1540952969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540952965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f6d6809e9117449a240455c6f82f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemies: []
 --- !u!1 &1614096776
 GameObject:
   m_ObjectHideFlags: 0
@@ -7187,7 +7236,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 537998027148284061, guid: eea487e7254a1da49a3042abb48f9a52, type: 3}
       propertyPath: speed
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 537998027148284061, guid: eea487e7254a1da49a3042abb48f9a52, type: 3}
       propertyPath: pathCreator
@@ -7260,6 +7309,10 @@ PrefabInstance:
     - target: {fileID: 3616786652878223603, guid: eea487e7254a1da49a3042abb48f9a52, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616786652878223603, guid: eea487e7254a1da49a3042abb48f9a52, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3616786652878223602, guid: eea487e7254a1da49a3042abb48f9a52, type: 3}
@@ -7614,7 +7667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90e3f86595d84749b62b7ac6dbd0277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCount: 1
+  enemyCount: 10
   Enemy: {fileID: 828962493}
   delayBtwSpawns: 2
 --- !u!4 &1769778900
@@ -7645,7 +7698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 828962493}
-  poolSize: 1
+  poolSize: 10
 --- !u!1 &1784664763
 GameObject:
   m_ObjectHideFlags: 0

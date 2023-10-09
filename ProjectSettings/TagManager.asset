@@ -26,6 +26,7 @@ TagManager:
   - TowerPlatform20
   - TowerPlatform21
   - TowerPlatform22
+  - Enemy
   layers:
   - Default
   - TransparentFX
