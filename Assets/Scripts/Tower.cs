@@ -5,6 +5,24 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     [SerializeField] private List<Enemy> _enemies = new List<Enemy>();
+
+    private Enemy CurrentEnemyTarget;
+
+    private void Update()
+    {
+        GetCurrentEnemyTarget();
+    }
+
+    private void GetCurrentEnemyTarget()
+    {
+        if (_enemies.Count <= 0)
+        {
+            CurrentEnemyTarget = null;
+            return;
+        }
+        CurrentEnemyTarget = _enemies[0];
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
