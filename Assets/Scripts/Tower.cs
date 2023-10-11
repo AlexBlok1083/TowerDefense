@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
+    [SerializeField] private GameObject ArrowBeginPos;
     [SerializeField] private List<Enemy> _enemies = new List<Enemy>();
+    [SerializeField] private Transform prfArrow;
 
     private Enemy CurrentEnemyTarget;
 
@@ -21,6 +23,11 @@ public class Tower : MonoBehaviour
             return;
         }
         CurrentEnemyTarget = _enemies[0];
+    }
+
+    private void Shoot()
+    {
+        Instantiate(prfArrow, ArrowBeginPos.transform.position, Quaternion.identity);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
